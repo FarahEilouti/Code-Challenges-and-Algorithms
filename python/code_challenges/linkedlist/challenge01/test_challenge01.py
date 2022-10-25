@@ -16,9 +16,10 @@ def test_nodes():
 
     node4 = Node(4)
     linkedList1.append(node4)
+    linkedList1.deleteNode(node3)
 
     actual = linkedList1.nodes
-    expected = [1,2,3,4]
+    expected = [1,2,4]
     assert actual == expected
 
 def test_delete_tail():
@@ -35,9 +36,9 @@ def test_delete_tail():
     node4 = Node(25)
     linkedList1.append(node4)
 
-    linkedList1.delete(25)
+    linkedList1.deleteNode(node1)
 
     actual = linkedList1.nodes
-    expected = [10,100,17]
+    expected = [100,17,25]
     assert actual == expected
     
