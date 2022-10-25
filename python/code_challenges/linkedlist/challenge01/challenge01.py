@@ -1,5 +1,8 @@
 # Write here the code challenge solution
 
+from pickle import NONE
+
+
 class Node:
     def __init__(self,value):
         self.value = value
@@ -9,6 +12,7 @@ class Node:
 class LinkedList:
     def __init__(self):
         self.head = None
+        self.nodes = []
 
     def append(self, node):
         if self.head is None:
@@ -18,6 +22,7 @@ class LinkedList:
             while current.next is not None:
                 current = current.next
             current.next = node
+        self.nodes.append(node.value)    
 
     def printAll(self):
         if self.head is None:
@@ -32,8 +37,11 @@ class LinkedList:
         """
         to delete a node:
         """
-        node.val = node.next.val
-        node.next = node.next.next
+        self.nodes.remove(node.value)
+        temp_node = node.next 
+        node.value = temp_node.value
+        node.next = temp_node.next
+        temp_node.next = None
        
 
 if __name__ == "__main__":
@@ -50,7 +58,7 @@ if __name__ == "__main__":
     node4 = Node("9")
     linkedList1.append(node4)
 
-    linkedList1.deleteNode("3")
+    linkedList1.deleteNode(node3)
     linkedList1.printAll()
 
         
