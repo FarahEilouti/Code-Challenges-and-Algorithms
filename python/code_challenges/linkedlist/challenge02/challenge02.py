@@ -46,19 +46,18 @@ class LinkedList:
 
         middle_position = math.ceil(counter / 2)
 
-        result = []
 
         new_counter = 1
 
         pointer = self.head
         while pointer is not None:
-            if new_counter >= middle_position:
-                result.append(pointer.value)
+            if new_counter == middle_position:
+                return pointer.value
             
             new_counter += 1
             pointer = pointer.next
         
-        return result
+        
        
 
 if __name__ == "__main__":
