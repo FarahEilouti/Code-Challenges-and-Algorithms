@@ -14,7 +14,7 @@ def test_linked_list():
     result = linkedList1.middle_node()
     
 
-    expected = ['c', 'd', 'e']
+    expected = 'c'
     actual = result
     assert actual == expected
     
