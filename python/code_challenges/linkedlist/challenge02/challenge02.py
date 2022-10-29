@@ -32,6 +32,10 @@ class LinkedList:
    
 
     def middle_node(self):
+        '''
+        a function that loops through the list to find length,
+         and stops to find the middle node
+        '''
         counter = 1
 
         current = self.head
