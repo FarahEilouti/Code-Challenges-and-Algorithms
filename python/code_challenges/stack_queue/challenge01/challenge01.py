@@ -79,14 +79,20 @@ class Stack:
 class MyQueue(object):
 
     def __init__(self):
-        self.in_stack = [] # the back of queue
-        self.out_stack = [] # the front of the queue
+        self.s1 = [] 
+        self.s2 = [] 
 
     def push(self, x):
         '''
         Push element x to the back of queue
         '''
-        self.in_stack.append(x)
+        while self.s1: 
+            self.s2.append(self.s1.pop())
+
+        self.s1.append(x)
+
+        while self.s2:
+            self.s1.append(self.s2.pop())
 
 
     def pop(self):
@@ -94,44 +100,57 @@ class MyQueue(object):
         Remove the element from the front
         '''
         self.peek()
-        return self.out_stack.pop()
+        return self.s1.pop()
 
 	
     def peek(self):
         '''
         Returns the element at the front of the queue
         '''
-        return self.out_stack[-1]
+        return self.s1[-1]
 
     def empty(self):
-        return not self.in_stack and not self.out_stack
+        return not self.s1
 
 
-#using queue:
-queue1 = Queue()
+if __name__ == "__main__":
+    
+    myqueue = MyQueue()
 
-queue1.enqueue(10)
-queue1.enqueue(20)
-queue1.enqueue(30)
+    myqueue.push(1)
+    myqueue.push(2)
+    myqueue.push(3)
 
-print(queue1.dequeue())
-print(queue1.dequeue())
-print(queue1.dequeue())
-print(queue1.dequeue())
-
+    print(myqueue.peek())
+    print(myqueue.pop())
+    print(myqueue.empty())
 
 
-# using stack
-stack1  = Stack()
-stack1.push("A")
-stack1.push("B")
-stack1.push("C")
-stack1.push("D")
-stack1.push("E")
+# #using queue:
+# queue1 = Queue()
 
-print(stack1.pop())
-print(stack1.pop())
-print(stack1.pop())
-print(stack1.peek())
-# print(stack1.get_size())
+# queue1.enqueue(10)
+# queue1.enqueue(20)
+# queue1.enqueue(30)
+
+# print(queue1.dequeue())
+# print(queue1.dequeue())
+# print(queue1.dequeue())
+# print(queue1.dequeue())
+
+
+
+# # using stack
+# stack1  = Stack()
+# stack1.push("A")
+# stack1.push("B")
+# stack1.push("C")
+# stack1.push("D")
+# stack1.push("E")
+
+# print(stack1.pop())
+# print(stack1.pop())
+# print(stack1.pop())
+# print(stack1.peek())
+# # print(stack1.get_size())
 
