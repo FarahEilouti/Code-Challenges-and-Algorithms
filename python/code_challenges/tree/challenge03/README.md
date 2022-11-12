@@ -1,6 +1,6 @@
 # Tree:
 ## Author: Farah Ailouti
-## links and resources: 
+## links and resources: https://github.com/FarahEilouti/Code-Challenges-and-Algorithms/pull/10
 ## Challenge03 - Convert Sorted Array to BST:
 
 <p>Given an integer array <code>nums</code>, convert <em>it to a <strong>height-balanced</strong> binary search tree</em>.</p>
